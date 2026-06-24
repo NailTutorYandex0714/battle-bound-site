@@ -1,0 +1,249 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Battle Bound — официальный сайт</title>
+    <style>
+        :root {
+            --primary: #ff4757;       /* Акцентный красный */
+            --secondary: #2f3542;     /* Тёмный серый */
+            --bg: #1e272e;            /* Фон страницы */
+            --text: #dfe6e9;          /* Цвет текста */
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background-color: var(--bg);
+            color: var(--text);
+            margin: 0;
+            padding: 0;
+            line-height: 1.6;
+        }
+
+        a { color: var(--primary); text-decoration: none; }
+        a:hover { text-decoration: underline; }
+
+        header {
+            padding: 3rem 1rem;
+            text-align: center;
+            border-bottom: 4px solid var(--primary);
+            background: rgba(0, 0, 0, 0.8);
+        }
+
+        h1 { margin: 0; font-size: 2.8rem; text-transform: uppercase; letter-spacing: 4px; color: white; }
+        p.tagline { color: var(--primary); font-size: 1.3rem; margin-top: 0.5rem; font-weight: bold; }
+
+        .container {
+            max-width: 960px;
+            margin: 2rem auto;
+            padding: 0 1.5rem;
+        }
+
+        section { margin-bottom: 3.5rem; }
+        h2 { color: var(--primary); border-left: 5px solid var(--primary); padding-left: 12px; margin-bottom: 1.5rem; font-size: 1.8rem; }
+
+        ul { list-style: none; padding: 0; }
+        ul li {
+            background: rgba(255, 255, 255, 0.06);
+            margin-bottom: 0.8rem;
+            padding: 1.2rem;
+            border-radius: 8px;
+            border: 1px solid rgba(255,255,255,0.05);
+        }
+
+        /* Сетка режимов */
+        .modes-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+            gap: 1.5rem;
+        }
+        .mode-card {
+            background: rgba(47, 53, 66, 0.7);
+            padding: 1.5rem;
+            border-radius: 10px;
+            text-align: center;
+            transition: transform 0.2s;
+        }
+        .mode-card:hover { transform: translateY(-5px); }
+        .mode-card h3 { margin: 0 0 0.6rem 0; color: var(--primary); }
+
+        /* --- СТИЛИ ДЛЯ АККОРДЕОНА (FAQ) --- */
+        .faq-item {
+            border: 1px solid rgba(255,255,255,0.1);
+            border-radius: 8px;
+            overflow: hidden;
+            margin-bottom: 0.4rem;
+        }
+        .faq-question {
+            background: rgba(255, 255, 255, 0.08);
+            padding: 1rem 1.5rem;
+            cursor: pointer;
+            font-weight: 600;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        .faq-answer {
+            background: rgba(0, 0, 0, 0.3);
+            padding: 1rem 1.5rem;
+            display: none; /* Скрыто по умолчанию */
+            color: #b2bec3;
+        }
+        /* Класс, который JS добавляет для показа ответа */
+        .faq-item.open .faq-answer { display: block; }
+        
+        /* Плюсик и минусик */
+        .faq-question::after { float: none; margin-left: 10px; content: "+"; font-weight: normal; }
+        .faq-item.open .faq-question::after { content: "−"; }
+
+        footer {
+            text-align: center;
+            padding: 2rem 1rem;
+            color: var(--secondary);
+            font-size: 0.9rem;
+            border-top: 1px solid rgba(255,255,255,0.08);
+            margin-top: 4rem;
+        }
+        
+        /* Ссылка "Лёгкая версия" внутри футера */
+        .easy-link {
+            color: #aaa;
+            font-size: 0.9em;
+            margin-left: 8px;
+        }
+        .easy-link:hover { color: white; text-decoration: underline; }
+    </style>
+</head>
+<body>
+
+    <header>
+        <h1>Battle Bound</h1>
+        <p class="tagline">Хаос, тактика и веселье со стикменами</p>
+    </header>
+
+    <div class="container">
+
+        <!-- О игре -->
+        <section id="about">
+            <h2>О игре</h2>
+            <p>
+                Battle Bound — это динамичный онлайн-шутер, где простые стикмены превращаются в настоящих бойцов. 
+                Игра создана на Scratch и доступна прямо в браузере. Здесь нет места скуке: быстрые матчи, командная игра, 
+                разнообразное оружие и техника.
+            </p>
+            <p>
+                Проект разработан KIKOKOdev и выпущен летом 2021 года. Battle Bound — это не просто стрельба, 
+                это проверка реакции, тактики и умения работать в команде.
+            </p>
+        </section>
+
+        <!-- Где играть -->
+        <section id="download">
+            <h2>Где играть и как начать</h2>
+            <ul>
+                <li>
+                    <strong>Веб-версия (Scratch):</strong> Игра запускается прямо в браузере без установки. 
+                    Перейди на страницу проекта: <a href="ВСТАВЬ_СЮДА_ССЫЛКУ_НА_SCRATCH" target="_blank">Scratch Project</a>.
+                </li>
+                <li>
+                    <strong>Веб-версия (Itch.io):</strong> Альтернативная площадка: <a href="ВСТАВЬ_СЮДА_ССЫЛКУ_НА_ITCH" target="_blank">Itch.io Page</a>.
+                </li>
+                <li>
+                    <strong>Требуется интернет:</strong> Так как это мультиплеерная игра, для матчей нужно стабильное подключение.
+                </li>
+                <li>
+                    <strong>Платформы:</strong> Работает на ПК, ноутбуках и планшетах. На мобильных телефонах может быть неудобно.
+                </li>
+            </ul>
+        </section>
+
+        <!-- Режимы -->
+        <section id="modes">
+            <h2>Режимы игры</h2>
+            <div class="modes-grid">
+                <div class="mode-card">
+                    <h3>Team Deathmatch</h3>
+                    <p>Командный бой до достижения лимита убийств. Работай в связке, прикрывай союзников.</p>
+                </div>
+                <div class="mode-card">
+                    <h3>Capture the Flag</h3>
+                    <p>Захвати флаг противника и доставь его на свою базу. Тактика и скорость — твои союзники.</p>
+                </div>
+                <div class="mode-card">
+                    <h3>Gun Game</h3>
+                    <p>Убивай противников, чтобы получать новое оружие. Пройди все уровни вооружения.</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- FAQ (АККОРДЕОН) -->
+        <section id="faq">
+            <h2>FAQ (Часто задаваемые вопросы)</h2>
+
+            <div class="faq-item">
+                <div class="faq-question">Есть ли в игре зомби и смена дня/ночи?</div>
+                <div class="faq-answer">
+                    Нет. В оригинальной версии Battle Bound от KIKOKOdev нет механики выживания против зомби, 
+                    а также цикла «день/ночь». Если ты помнишь такие элементы, скорее всего, ты путаешь эту игру 
+                    с другим похожим проектом на Scratch.
+                </div>
+            </div>
+
+            <div class="faq-item">
+                <div class="faq-question">Что значит Human vs AI?</div>
+                <div class="faq-answer">
+                    Отдельного режима «Люди против ИИ» нет. Однако, если в матче не хватает игроков, 
+                    сервер автоматически добавляет ботов, чтобы команды были равными.
+                </div>
+            </div>
+
+            <div class="faq-item">
+                <div class="faq-question">Почему меня выкидывает из игры?</div>
+                <div class="faq-answer">
+                    Battle Bound работает на облачных переменных Scratch, которые могут работать нестабильно при плохом соединении. 
+                    Это известная особенность движка.
+                </div>
+            </div>
+
+            <div class="faq-item">
+                <div class="faq-question">Можно ли играть с друзьями?</div>
+                <div class="faq-answer">
+                    Да! Просто зайдите на одну и ту же страницу проекта в одно время. Вы автоматически окажетесь в одном лобби.
+                </div>
+            </div>
+        </section>
+
+        <!-- Контакты -->
+        <section id="contact">
+            <h2>Контакты и поддержка</h2>
+            <p>Если у тебя есть вопросы, предложения или ты нашел баг — напиши разработчику:</p>
+            <ul>
+                <li><strong>Itch.io:</strong> <a href="https://kikokodev.itch.io">Профиль KIKOKOdev</a></li>
+                <li><strong>Scratch:</strong> <a href="https://scratch.mit.edu/users/KIKOKOdev">Профиль KIKOKOdev</a></li>
+                <li><strong>Email:</strong> kikokodev@example.com</li>
+            </ul>
+        </section>
+
+    </div>
+
+    <!-- Футер с маленькой ссылкой вместо кнопки -->
+    <footer>
+        &copy; 2024 Battle Bound. Все права защищены. 
+        Не является коммерческим продуктом.
+        <a href="https://yaromir1212.github.io" class="easy-link" target="_blank" rel="noopener noreferrer">
+            | Лёгкая версия сайта
+        </a>
+    </footer>
+
+    <!-- Скрипт для работы аккордеона -->
+    <script>
+        document.querySelectorAll('.faq-question').forEach(question => {
+            question.addEventListener('click', () => {
+                const item = question.parentElement;
+                item.classList.toggle('open');
+            });
+        });
+    </script>
+</body>
+</html>
